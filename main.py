@@ -48,6 +48,7 @@ def input_omdb():
     parameters["type"]=input("So is it a series or a movie?\n")
     parameters["t"]=input("Give me the title\n")
     response=requests.get(baseurl,params=parameters).json()
+    print(response)
     return response
 
 
@@ -60,8 +61,13 @@ def rating():
     print("__________________________________________________\n")
     print("RATINGS")
     print("__________________________________________________")
-    print("Rotten Tomatoes:",response["Ratings"][1]["Value"])
-    print("Meta Critic:",response["Ratings"][2]["Value"],"\n\n")
+
+    try:
+        print("Rotten Tomatoes:",response["Ratings"][1]["Value"])
+        print("Meta Critic:",response["Ratings"][2]["Value"],"\n\n")
+    except:
+         print("Internet Movie Database:",response["Ratings"][0]["Value"])
+        print("IMDB rating:",response["imdbRating"],"\n\n")
     return None
 
 
