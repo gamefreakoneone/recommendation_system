@@ -42,4 +42,4 @@ while y == "continue":
     
     y=input("Wanna continue? type continue if you want to....")
 
-print("Thank you. Lets do this again?")
+print("Thank you.See you later!")
