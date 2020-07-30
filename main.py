@@ -48,7 +48,6 @@ def input_omdb():
     parameters["type"]=input("So is it a series or a movie?\n")
     parameters["t"]=input("Give me the title\n")
     response=requests.get(baseurl,params=parameters).json()
-    print(response)
     return response
 
 
